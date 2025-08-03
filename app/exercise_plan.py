@@ -6,7 +6,6 @@ class AvailableEquipment(Enum):
     dumbbells = "dumbbells"
     kettlebells = "kettlebells"
     resistance_bands = "resistance bands"
-    bodyweight = "bodyweight"
     machine = "machine"
 
 class MuscleGroup(Enum):
