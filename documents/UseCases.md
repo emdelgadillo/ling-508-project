@@ -6,7 +6,7 @@ I have decided I want to make a tool that helps plan workouts, similar to the yo
 class. I struggle to workout on my own without a trainer because I don’t know how to plan workouts,
 I’m hoping this could help me with a real life struggle!
 
-####Plan Your Workout
+####Plan Your Workouts
 
 ####Use Case 1: Identify and return exercises based on target muscle group.
 Example Inputs: legs, core, arms

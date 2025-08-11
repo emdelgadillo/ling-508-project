@@ -1,7 +1,7 @@
 from app.exercise_plan import AvailableEquipment, MuscleGroup, WorkoutType
 from app.services import select_exercise
 
-def test_service():
+def test_services():
     exercises = select_exercise(
         required_equipment=AvailableEquipment.none,
         muscle_group=MuscleGroup.legs,
@@ -11,7 +11,7 @@ def test_service():
     assert "burpees" in exercises
     assert "bent-over row" not in exercises
 
-def test_service_2():
+def test_services_2():
     exercises = select_exercise(
         required_equipment=AvailableEquipment.barbell,
         muscle_group=None,

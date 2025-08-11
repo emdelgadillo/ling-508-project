@@ -3,7 +3,7 @@ from db.mysql_repository import MysqlRepository
 
 repo = MysqlRepository()
 
-def select_exercise(
+def select_exercises(
     required_equipment: AvailableEquipment | None,
     muscle_group: MuscleGroup | None,
     workout_type: WorkoutType | None,
