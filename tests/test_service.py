@@ -1,8 +1,8 @@
 from app.exercise_plan import AvailableEquipment, MuscleGroup, WorkoutType
-from app.services import select_exercise
+from app.services import select_exercises
 
 def test_services():
-    exercises = select_exercise(
+    exercises = select_exercises(
         required_equipment=AvailableEquipment.none,
         muscle_group=MuscleGroup.legs,
         workout_type=WorkoutType.cardio
@@ -12,7 +12,7 @@ def test_services():
     assert "bent-over row" not in exercises
 
 def test_services_2():
-    exercises = select_exercise(
+    exercises = select_exercises(
         required_equipment=AvailableEquipment.barbell,
         muscle_group=None,
         workout_type=None
