@@ -11,7 +11,7 @@ def test_service():
     assert "burpees" in exercises
     assert "bent-over row" not in exercises
 
-def test_select_exercise_with_partial_filters():
+def test_service_2():
     exercises = select_exercise(
         required_equipment=AvailableEquipment.barbell,
         muscle_group=None,
