@@ -1,4 +1,4 @@
-from app.exercise_plan import AvailableEquipment, MuscleGroup, WorkoutType, RoundType, Exercise, Rounds, WorkoutPlan
+from apps.exercise_plan import AvailableEquipment, MuscleGroup, WorkoutType, RoundType, Exercise, Rounds, WorkoutPlan
 
 def test_exercise():
     exercise = Exercise(

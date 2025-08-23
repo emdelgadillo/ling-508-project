@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Find an Exercise</title>
+</head>
+<body>
+<h1>Welcome to the Exercise Search API</h1>
+<h2>Methods</h2>
+
+<h3>Search for Exercises</h3>
+<div>
+<p>Endpoint: http://localhost:5000/search</p>
+<p>Request type: GET</p>
+<p>Query parameters: </p>
+<ul>
+    <li>equipment (optional) – e.g., none, barbell</li>
+    <li>muscle (optional) – e.g., legs, chest</li>
+    <li>type (optional) – e.g., cardio, strength</li>
+</ul>
+<p>Example request:</p>
+<pre>
+GET /search?equipment=none&muscle=legs&type=cardio
+</pre>
+<p>Response: JSON list of exercise names that match the filters, e.g.:</p>
+<pre>
+{
+  "exercises": [
+    "burpees",
+    "jogging",
+    "jumping jacks"
+  ]
+}
+</pre>
+</div>
+</body>
+</html>

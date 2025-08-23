@@ -1,5 +1,5 @@
-from app.exercise_plan import AvailableEquipment, MuscleGroup, WorkoutType
-from app.services import select_exercises
+from apps.exercise_plan import AvailableEquipment, MuscleGroup, WorkoutType
+from apps.services import select_exercises
 
 def test_services():
     exercises = select_exercises(

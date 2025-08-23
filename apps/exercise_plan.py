@@ -6,20 +6,20 @@ class AvailableEquipment(Enum):
     dumbbells = "dumbbells"
     kettlebells = "kettlebells"
     resistance_bands = "resistance bands"
-    machine = "machine"
+    rowing_machine = "rowing machine"
 
 class MuscleGroup(Enum):
     chest = "chest"
     back = "back"
     legs = "legs"
-    shoulders = "shoulders"
     arms = "arms"
     core = "core"
+    full_body = "full body"
+    upper_body = "upper body"
 
 class WorkoutType(Enum):
     cardio = "cardio"
     strength = "strength training"
-    hiit = "high-intensity interval training"
     mobility = "mobility"
     flexibility = "flexibility"
 

@@ -1,0 +1,6 @@
+pytest
+beautifulsoup4
+mysql-connector-python
+Flask
+httpie
+flask-cors

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Find an Exercise</title>
+</head>
+<body>
+
+<h1>Find an Exercise</h1>
+
+<h2>Select your exercise requirements here.</h2>
+
+<form id="form1" method="get" action="/search">
+  <div class="input-group">
+    <label for="equipment">Available Equipment</label>
+    <select id="equipment" name="equipment">
+      <option value="">-- Select Equipment --</option>
+      <option value="none">None</option>
+      <option value="barbell">Barbell</option>
+      <option value="dumbbells">Dumbbells</option>
+      <option value="rowing machine">Rowing Machine</option>
+    </select>
+    <label for="muscle_group">Muscle Group</label>
+    <select id="muscle_group" name="muscle_group">
+      <option value="">-- Select Muscle Group --</option>
+      <option value="chest">Chest</option>
+      <option value="back">Back</option>
+      <option value="legs">Legs</option>
+      <option value="arms">Arms</option>
+      <option value="core">Core</option>
+      <option value="full body">Full Body</option>
+      <option value="upper body">Upper Body</option>
+    </select>
+    <label for="workout_type">Workout Type</label>
+    <select id="workout_type" name="workout_type">
+      <option value="">-- Select Workout Type --</option>
+      <option value="cardio">Cardio</option>
+      <option value="strength training">Strength Training</option>
+      <option value="mobility">Mobility</option>
+      <option value="flexibility">Flexibility</option>
+    </select>
+  </div>
+  <button type="submit">Submit</button>
+</form>
+
+
+<h2>Response: </h2>
+<div id="response"></div>
+
+</body>
+
+<script>
+async function handleSubmit1(event) {
+    event.preventDefault();
+
+    const data = new FormData(event.target);
+    const equipment = data.get("equipment");
+    const muscle_group = data.get("muscle_group");
+    const workout_type = data.get("workout_type");
+    const response = await fetch(
+    `http://localhost:5000/search?equipment=${encodeURIComponent(equipment)}&muscle_group=${encodeURIComponent(muscle_group)}&workout_type=${encodeURIComponent(workout_type)}`
+    );
+    const myJson = await response.json();
+    console.log(myJson);
+    if (myJson.exercises && myJson.exercises.length > 0) {
+        document.getElementById('response').textContent =
+            "Here are the exercises that match your criteria:\n" +
+            myJson.exercises.join(", ");
+    } else {
+        document.getElementById('response').textContent =
+            "There were no matches for those criteria.";
+    }
+}
+const form1 = document.getElementById("form1");
+form1.addEventListener("submit", async (e) => handleSubmit1(e), false);
+</script>
+
+</html>
